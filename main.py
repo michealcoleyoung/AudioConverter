@@ -1,6 +1,6 @@
 from pydub import AudioSegment
 from appJar import gui
-import re
+
 
 def convert(btn):
     audio_file = app.getEntry("audio_file")
