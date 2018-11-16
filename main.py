@@ -18,7 +18,7 @@ def convert(btn):
         song.export('/Users/michealcoleyoung/Downloads/test.wav', format="wav")
         #  Convert file to WAV and save to the downloads directory
 
-    #  Message box will go here
+    #  Message box will go here.
 
 
 app = gui('Audio Converter', useTtk=True)
