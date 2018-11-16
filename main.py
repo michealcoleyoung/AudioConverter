@@ -1,15 +1,17 @@
 from pydub import AudioSegment
 from appJar import gui
+import os
 
 
 def convert(btn):
-    audio_file = app.getEntry("audio_file")
-    song = AudioSegment.from_wav(audio_file)
+    audio_file = app.getEntry("audio_file")  #  Selects audio from filepath
+    song = AudioSegment.from_file(audio_file) #  Identifies what file type (WAV or MP3)
 
     if app.getRadioButton("choice") == "MP3":
-        song.export("test.mp3", format="mp3")
+        #  Convert file to MP3 and save to the downloads directory
+
     else:
-        song.export("text.wav", format="wav")
+        #  Convert file to WAV and save to the downloads directory
 
 
 app = gui('Audio Converter', useTtk=True)
