@@ -2,6 +2,8 @@ from pydub import AudioSegment
 from appJar import gui
 import os
 
+# TODO: Make sure that a message box appears to confirm successful conversion
+
 
 def convert(btn):
     audio_file = app.getEntry("audio_file")  #  Selects audio from filepath
