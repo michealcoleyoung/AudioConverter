@@ -11,14 +11,16 @@ def convert(btn):
     song = AudioSegment.from_file(audio_file)  # Identifies what file type (WAV or MP3)
 
     if app.getRadioButton("choice") == "MP3":
-        song.export('/Users/michealcoleyoung/Downloads/test.mp3', format="mp3")
+        file_name = input("What would you like to name the file: ")
+        song.export(f'/Users/michealcoleyoung/Downloads/{file_name}.mp3', format="mp3")
         # Convert file to MP3 and save to the downloads directory
 
     else:
-        song.export('/Users/michealcoleyoung/Downloads/test.wav', format="wav")
+        file_name = input("What would you like to name the file: ")
+        song.export(f'/Users/michealcoleyoung/Downloads/{file_name}.wav', format="wav")
         # Convert file to WAV and save to the downloads directory
 
-    # Message box will go here.
+    app.infoBox("message", "Song was successfully converted!")
 
 
 app = gui('Audio Converter', useTtk=True)
