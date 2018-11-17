@@ -8,15 +8,14 @@ import os
 
 def convert(btn):
     audio_file = app.getEntry("audio_file")    # Selects audio from filepath
-    song = AudioSegment.from_file(audio_file)  # Identifies what file type (WAV or MP3)
+    song = AudioSegment.from_file(audio_file)  # Identifies what file type (WAV or MP3 etc.)
+    file_name = app.getEntry("file_name")      # For testing purposes
 
     if app.getRadioButton("choice") == "MP3":
-        file_name = input("What would you like to name the file: ")
         song.export(f'/Users/michealcoleyoung/Downloads/{file_name}.mp3', format="mp3")
         # Convert file to MP3 and save to the downloads directory
 
     else:
-        file_name = input("What would you like to name the file: ")
         song.export(f'/Users/michealcoleyoung/Downloads/{file_name}.wav', format="wav")
         # Convert file to WAV and save to the downloads directory
 
@@ -31,6 +30,8 @@ app.addFileEntry("audio_file")  # select audio file
 # audio formats to choose from are WAV and MP3
 app.addRadioButton("choice", "MP3")
 app.addRadioButton("choice", "WAV")
+app.addEntry("file_name")
+app.setEntryDefault("file_name", "Enter the name of the file you are converting")
 
 app.addButton("CONVERT", convert)
 
