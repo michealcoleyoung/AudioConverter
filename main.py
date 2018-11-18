@@ -10,7 +10,6 @@ def convert(btn):
 
     song.export(f'/Users/michealcoleyoung/Downloads/{file_name.replace(".wav", "")}.mp3', format="mp3")
     # Convert file to MP3 and save to the downloads directory
-
     app.infoBox("message", "Song was successfully converted!")
 
 
